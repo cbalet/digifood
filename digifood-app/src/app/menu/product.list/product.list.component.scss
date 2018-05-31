@@ -7,12 +7,22 @@
       margin: 0 auto;
       height: 250px;
       width: 250px;
+      cursor: pointer;
+      .addCart{
+        display: none;
+        padding-top: 20px;
+      }
     }
     .prodImg:hover{
       .layer{
-        background-color: rgba(50, 50, 50, 0.7);
+        background-color: rgba(64, 18, 18, 0.85);
         width: 100%;
         height: 100%;
+        .addCart{
+          display: block;
+          color: red;
+          font-size: 50px;
+        }
       }
     }
     .prodDetail{
