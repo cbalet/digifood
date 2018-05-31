@@ -1,0 +1,7 @@
+<nav>
+<app-bar-nav [categories]="cart.categories" (returnCat)="changeProductList($event)"></app-bar-nav>
+</nav>
+
+<main>
+  <app-product-list [products]="products"></app-product-list>
+</main>

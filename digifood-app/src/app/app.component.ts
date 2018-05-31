@@ -8,14 +8,7 @@ import {Cart} from "./share/models/cart";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-cart: Cart;
 
-  constructor(private cartService : CartService) {
-    this.cartService.getCart().subscribe(value => {
-      this.cart = value;
-    })
-  }
 
 
 }

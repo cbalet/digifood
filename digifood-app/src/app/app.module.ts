@@ -3,15 +3,26 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {CartService} from "./service/cart.service";
 import {HttpClientModule} from "@angular/common/http";
+import {ForbiddenComponent} from "./component/forbidden/forbidden.component";
+import {NotFoundComponent} from "./component/not-found/not-found.component";
+import {FooterComponent} from "./component/footer/footer.component";
+import {HeaderComponent} from "./component/header/header.component";
+import {AppRoutingModule} from "./app-routing.module";
+import {CartModule} from "./cart/cart.module";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ForbiddenComponent,
+    NotFoundComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
-
+    HttpClientModule,
+    AppRoutingModule,
+    CartModule
   ],
   providers: [
     CartService

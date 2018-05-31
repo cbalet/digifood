@@ -1,0 +1,6 @@
+
+<div *ngFor="let product of products">
+  {{product.name}}
+  {{product.price}}
+  <img [src]="product.image" [alt]="product.name">
+</div>
