@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserModule} from "@angular/platform-browser";
-import {CartComponent} from "./cart.component";
+import {MenuComponent} from "./menu.component";
 import {BarNavComponent} from "./bar-nav/bar-nav.component";
 import {ProductListComponent} from "./product.list/product.list.component";
 
@@ -11,10 +11,10 @@ import {ProductListComponent} from "./product.list/product.list.component";
     BrowserModule
   ],
   declarations: [
-    CartComponent,
+    MenuComponent,
     BarNavComponent,
     ProductListComponent
   ]
 })
 
-export class CartModule { }
+export class MenuModule { }

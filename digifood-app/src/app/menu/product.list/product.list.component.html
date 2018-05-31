@@ -1,0 +1,13 @@
+<div class="row productsBloc">
+  <div class="col-xl-4 col-lg-6 col-12 prodDiv" *ngFor="let product of productList">
+    <div class="prodImg" [style.backgroundImage]="'url('+ product.image +')'">
+      <div class="layer">
+
+      </div>
+    </div>
+    <div class="row prodDetail">
+      <div class="col-8 name">{{product.name}}</div>
+      <div class="col-4 price">{{product.price + ' €'}}</div>
+    </div>
+  </div>
+</div>

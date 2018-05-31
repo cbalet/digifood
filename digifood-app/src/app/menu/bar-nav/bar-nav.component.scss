@@ -1,0 +1,28 @@
+.navBloc{
+  .catDiv{
+    text-align: center;
+    .catBtn{
+      border-radius: 10px;
+      border: 1px solid #bf1531;
+      color: #bf1531;
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    margin: 0;
+    .catDiv{
+      margin: 25% 0;
+      .catBtn{
+        padding: 10px 50px;
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    padding: 20px 15%;
+    .catBtn{
+      padding: 5px 10px;
+    }
+  }
+
+}

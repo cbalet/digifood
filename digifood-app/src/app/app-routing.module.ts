@@ -2,12 +2,12 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from "./component/not-found/not-found.component";
 import {ForbiddenComponent} from "./component/forbidden/forbidden.component";
-import {CartComponent} from "./cart/cart.component";
+import {MenuComponent} from "./menu/menu.component";
 
 export const routes: Routes = [
   {
     path: '',
-    component: CartComponent,
+    component: MenuComponent,
     pathMatch: 'full'
   },
   {

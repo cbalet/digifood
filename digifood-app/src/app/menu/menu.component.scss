@@ -1,0 +1,17 @@
+@media screen and (min-width: 992px) {
+  #nav{
+    position: fixed;
+    left: 0;
+    width: 250px;
+    background: rgba(128, 81, 81, 0.36);
+    height: 100%;
+    border-right: 1px solid #bf1531;
+  }
+  #content{
+    margin-left: 250px;
+  }
+}
+@media screen and (max-width: 992px) {
+
+}
+

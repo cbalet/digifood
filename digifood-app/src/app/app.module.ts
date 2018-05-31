@@ -8,7 +8,7 @@ import {NotFoundComponent} from "./component/not-found/not-found.component";
 import {FooterComponent} from "./component/footer/footer.component";
 import {HeaderComponent} from "./component/header/header.component";
 import {AppRoutingModule} from "./app-routing.module";
-import {CartModule} from "./cart/cart.module";
+import {MenuModule} from "./menu/menu.module";
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {CartModule} from "./cart/cart.module";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    CartModule
+    MenuModule
   ],
   providers: [
     CartService
