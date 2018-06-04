@@ -2,6 +2,7 @@
   "categories":[
     {
       "name":"Boissons",
+      "image":"./assets/images/drinks.png",
       "products":[
         {
           "id":81,
@@ -32,6 +33,7 @@
     },
     {
       "name":"Sandwich",
+      "image":"./assets/images/sandwich.png",
       "products":[
         {
           "id":35,
@@ -55,6 +57,7 @@
     },
     {
       "name":"Snacks",
+      "image":"./assets/images/snacks.png",
       "products":[
         {
           "id":58,

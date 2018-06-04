@@ -1,6 +1,6 @@
 <div class="row navBloc">
-  <div *ngFor="let cat of categories" class="col-lg-12 col-4 catDiv">
-    <button class="catBtn" value="cat.name" (click)="changeCategory(cat.name)">{{cat.name}}</button>
+  <div *ngFor="let cat of categories" class="col-4 catDiv">
+    <button class="catBtn" value="cat.name" [style.backgroundImage]="'url('+cat.image +')'" (click)="changeCategory(cat.name)">{{cat.name}}</button>
   </div>
 </div>
 

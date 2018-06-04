@@ -1,7 +1,24 @@
 <nav id="nav">
-<app-bar-nav [categories]="cart.categories" (returnCat)="changeProductList($event)"></app-bar-nav>
+  <div class="row navBloc">
+    <div *ngFor="let cat of menu.categories" class="col-4 catDiv">
+      <button class="catBtn" value="cat.name" [style.backgroundImage]="'url('+cat.image +')'" (click)="changeCategory(cat.name)">{{cat.name}}</button>
+    </div>
+  </div>
 </nav>
 
 <main id="content">
-  <app-product-list [productList]="products"></app-product-list>
+  <div class="row productsBloc">
+    <div class="col-xl-4 col-lg-6 col-12 prodDiv" *ngFor="let product of products">
+      <div class="prodImg" [style.backgroundImage]="'url('+product.image +')'" title="Ajouter au panier">
+        <div class="layer">
+          <i class="fa fa-cart-arrow-down addCart" (click)="addCart(product)"></i>
+        </div>
+      </div>
+      <div class="row prodDetail">
+        <div class="col-8 name">{{product.name}}</div>
+        <div class="col-4 price">{{product.price + ' €'}}</div>
+      </div>
+    </div>
+  </div>
+
 </main>

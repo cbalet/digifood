@@ -1,28 +1,24 @@
 .navBloc{
+  padding: 20px 15%;
   .catDiv{
     text-align: center;
     .catBtn{
+      padding: 20px 30px;
       border-radius: 10px;
       border: 1px solid #bf1531;
-      color: #bf1531;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
+      background-size: cover;
+      background-position-y: center;
+    }
+    .catBtn:hover{
+      color: #bf1531;
     }
   }
 
-  @media screen and (min-width: 992px) {
-    margin: 0;
-    .catDiv{
-      margin: 25% 0;
-      .catBtn{
-        padding: 10px 50px;
-      }
-    }
-  }
   @media screen and (max-width: 992px) {
-    padding: 20px 15%;
     .catBtn{
-      padding: 5px 10px;
     }
   }
-
 }

@@ -9,6 +9,8 @@ import {FooterComponent} from "./component/footer/footer.component";
 import {HeaderComponent} from "./component/header/header.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {MenuModule} from "./menu/menu.module";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {CartComponent} from "./menu/cart/cart.component";
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import {MenuModule} from "./menu/menu.module";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
     MenuModule
   ],
   providers: [

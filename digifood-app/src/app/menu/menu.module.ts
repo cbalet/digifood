@@ -4,6 +4,7 @@ import {BrowserModule} from "@angular/platform-browser";
 import {MenuComponent} from "./menu.component";
 import {BarNavComponent} from "./bar-nav/bar-nav.component";
 import {ProductListComponent} from "./product.list/product.list.component";
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -13,8 +14,12 @@ import {ProductListComponent} from "./product.list/product.list.component";
   declarations: [
     MenuComponent,
     BarNavComponent,
-    ProductListComponent
-  ]
+    ProductListComponent,
+    CartComponent
+  ],
+  entryComponents: [
+    CartComponent
+  ],
 })
 
 export class MenuModule { }

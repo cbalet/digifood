@@ -7,6 +7,7 @@
       margin: 0 auto;
       height: 250px;
       width: 250px;
+      border: 2px solid #bf1531;
       cursor: pointer;
       .addCart{
         display: none;
@@ -35,7 +36,7 @@
     }
     .price{
       padding: 5px 0;
-      border: 2px solid black;
+      border: 2px solid #bf1531;
       border-top: none;
       border-radius: 0 0 5px 5px;
     }
