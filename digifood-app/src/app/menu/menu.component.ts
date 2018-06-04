@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Menu} from "../share/models/menu";
 import {CartService} from "../service/cart.service";
 import {Product} from "../share/models/product";
 import {Category} from "../share/models/category";
-import {CartItem} from "../share/models/cart-item";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {CartComponent} from "./cart/cart.component";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-menu',
@@ -15,11 +15,12 @@ import {CartComponent} from "./cart/cart.component";
 export class MenuComponent implements OnInit {
 
   menu: Menu = new Menu();
-  cart: CartItem[]=[];
+  cart: Map<string,Product> = new Map<string, Product>();
   products: Product[];
 
   constructor(private cartService : CartService,
-              private modalService: NgbModal) { }
+              private modalService: NgbModal,
+              private toastrService: ToastrService) { }
 
   ngOnInit() {
     this.cartService.getCart().subscribe(value => {
@@ -41,11 +42,12 @@ export class MenuComponent implements OnInit {
   }
 
   addCart(product) {
-    const modalRef = this.modalService.open(CartComponent);
-    modalRef.componentInstance.product = product;
-    modalRef.componentInstance.cart = this.cart;
-    modalRef.result.then(value => {
-      modalRef.dismiss();
-    });
+    this.toastrService.success('1 '+product.name+' a été ajouté à votre panier');
+    if (this.cart.get(product.name)){
+      this.cart.get(product.name).cartStock +=1;
+    } else{
+      product.cartStock = 1;
+      this.cart.set(product.name, product)
+    }
   }
 }

@@ -1,0 +1,9 @@
+.stockInput{
+  width: 30%;
+  text-align: center;
+}
+.chtStockBtn{
+  font-size: 20px;
+  margin: 5px;
+  cursor: pointer;
+}

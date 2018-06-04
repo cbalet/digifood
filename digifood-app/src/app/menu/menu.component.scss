@@ -1,3 +1,15 @@
+//header
+
+#header {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  box-shadow: 0 2px 6px grey;
+  background-color: white;
+  left: 0;
+  width: 100%;
+}
+
 //navigation
 .navBloc{
   padding: 20px 15%;

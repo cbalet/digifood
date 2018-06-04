@@ -8,8 +8,10 @@ import {NotFoundComponent} from "./component/not-found/not-found.component";
 import {FooterComponent} from "./component/footer/footer.component";
 import {HeaderComponent} from "./component/header/header.component";
 import {AppRoutingModule} from "./app-routing.module";
-import {MenuModule} from "./menu/menu.module";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgxDatatableModule} from "@swimlane/ngx-datatable";
+import {ToastNoAnimation, ToastNoAnimationModule, ToastrModule} from "ngx-toastr";
+import {MenuComponent} from "./menu/menu.component";
 import {CartComponent} from "./menu/cart/cart.component";
 
 @NgModule({
@@ -18,14 +20,23 @@ import {CartComponent} from "./menu/cart/cart.component";
     ForbiddenComponent,
     NotFoundComponent,
     FooterComponent,
+    CartComponent,
+    MenuComponent,
     HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxDatatableModule,
+    ToastrModule.forRoot({
+      toastComponent: ToastNoAnimation,
+    }),
+    ToastNoAnimationModule,
     AppRoutingModule,
-    NgbModule.forRoot(),
-    MenuModule
+    NgbModule.forRoot()
+  ],
+  entryComponents: [
+    CartComponent
   ],
   providers: [
     CartService

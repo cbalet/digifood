@@ -5,5 +5,6 @@ export class Product{
   public price: number;
   public tva: number;
   public image: string;
+  public cartStock: number = 0;
 
 }

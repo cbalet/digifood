@@ -1,3 +1,7 @@
+<header>
+  <app-header [cart]="cart" id="header"></app-header>
+</header>
+
 <nav id="nav">
   <div class="row navBloc">
     <div *ngFor="let cat of menu.categories" class="col-4 catDiv">
@@ -11,7 +15,7 @@
     <div class="col-xl-4 col-lg-6 col-12 prodDiv" *ngFor="let product of products">
       <div class="prodImg" [style.backgroundImage]="'url('+product.image +')'" title="Ajouter au panier">
         <div class="layer">
-          <i class="fa fa-cart-arrow-down addCart" (click)="addCart(product)"></i>
+          <i class="fa fa-cart-plus addCart" (click)="addCart(product)"></i>
         </div>
       </div>
       <div class="row prodDetail">
