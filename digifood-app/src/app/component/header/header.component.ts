@@ -12,6 +12,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 export class HeaderComponent implements OnInit{
 
   @Input() cart: Map<string,Product>;
+  @Input() totProd: number;
 
   constructor(
     private modalService: NgbModal

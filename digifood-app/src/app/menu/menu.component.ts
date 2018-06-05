@@ -17,16 +17,18 @@ export class MenuComponent implements OnInit {
   menu: Menu = new Menu();
   cart: Map<string,Product> = new Map<string, Product>();
   products: Product[];
+  private totProd: number =0;
 
   constructor(private cartService : CartService,
               private modalService: NgbModal,
               private toastrService: ToastrService) { }
 
   ngOnInit() {
+    this.toastrService.toastrConfig.positionClass = 'toast-bottom-center';
     this.cartService.getCart().subscribe(value => {
       this.menu = value;
       this.products = this.menu.categories[0].products;
-    })
+    });
   }
 
   changeCategory(category) {
@@ -49,5 +51,13 @@ export class MenuComponent implements OnInit {
       product.cartStock = 1;
       this.cart.set(product.name, product)
     }
+    this.calcTotProd();
+  }
+
+  calcTotProd(){
+    this.totProd = 0;
+    Array.from(this.cart.values()).forEach(value => {
+      this.totProd += value.cartStock;
+    })
   }
 }
