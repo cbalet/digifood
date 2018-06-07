@@ -1,6 +1,6 @@
 .headerBtn{
   font-weight: bold;
-  color: #ec4848;
+  color: #bf1531;
    background: none;
   cursor: pointer;
   border: none;
@@ -8,9 +8,28 @@
   padding: 5px 20px;
  }
 .headerBtn:hover{
-  color: #bf1531;
+  color: #961526;
 }
-.cart{
-  color: #bf1531;
-  font-size: 20px;
+.cartDiv{
+  cursor: pointer;
+  .cart{
+    color: #bf1531;
+    font-size: 20px;
+  }
+  .nbProd{
+    background-color: #bf1531;
+    color: white;
+    border-radius: 10px;
+    padding: 2px 6px;
+    margin-right: 5px;
+  }
 }
+.cartDiv:hover{
+  .cart{
+    color: #961526;
+  }
+  .nbProd{
+    background-color: #961526;
+  }
+}
+

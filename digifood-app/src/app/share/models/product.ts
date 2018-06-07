@@ -4,7 +4,11 @@ export class Product{
   public name: string;
   public price: number;
   public tva: number;
-  public image: string;
+  private _image: string;
   public cartStock: number = 0;
 
+
+  get image(): string {
+    return this._image.replace(' ','%20');
+  }
 }

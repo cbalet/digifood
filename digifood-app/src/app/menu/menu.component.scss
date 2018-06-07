@@ -86,3 +86,13 @@
     }
   }
 }
+
+//Toast
+.toast-container{
+  .toast{
+    padding: 15px 15px 15px 15px;
+  }
+  .toast-error {
+    background-image: none !important;
+  }
+}

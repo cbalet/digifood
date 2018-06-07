@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
 import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 import {Product} from "../../share/models/product";
 import {DatatableComponent} from '@swimlane/ngx-datatable';
@@ -6,7 +6,8 @@ import {DatatableComponent} from '@swimlane/ngx-datatable';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CartComponent implements OnInit {
   @ViewChild(DatatableComponent) table: DatatableComponent;
@@ -30,17 +31,23 @@ export class CartComponent implements OnInit {
       if (prod.cartStock==0)
         this.cart.delete(prod.name);
     });
-    this.activeModal.close(this.cart);
+    this.activeModal.close({cart : this.cart, totProd: this.totStock});
   }
 
-  addStock(prod: Product) {
+  moreStock(prod: Product) {
     this.cart.get(prod.name).cartStock = prod.cartStock + 1;
     this.calculatePrice();
   }
 
-  removeStock(prod: Product) {
+  lessStock(prod: Product) {
     if (prod.cartStock>-1)
     this.cart.get(prod.name).cartStock = prod.cartStock - 1;
+    this.calculatePrice();
+  }
+
+  removeProd(product){
+    this.cart.delete(product.name);
+    this.rows = Array.from(this.cart.values());
     this.calculatePrice();
   }
 

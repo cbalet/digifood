@@ -5,9 +5,9 @@
   <div class="col-4">
     <button class="headerBtn" [routerLink]="['/cart']">Le menu</button>
   </div>
-  <div class="col-2">
-    <span>{{totProd}}</span>
-    <i class="fa fa-shopping-cart cart" (click)="openCart()"></i>
+  <div class="col-2 cartDiv" (click)="openCart()">
+    <span class="nbProd">{{totProd}}</span>
+    <i class="fa fa-shopping-cart cart"></i>
   </div>
 </header>
 

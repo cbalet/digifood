@@ -25,8 +25,10 @@ export class HeaderComponent implements OnInit{
     const modalRef = this.modalService.open(CartComponent);
     modalRef.componentInstance.cart = this.cart;
     modalRef.result.then(modifyCart => {
-      if (modifyCart)
-        this.cart = modifyCart;
+      if (modifyCart){
+        this.cart = modifyCart.cart;
+        this.totProd = modifyCart.totProd;
+      }
       modalRef.dismiss();
     });
   }
