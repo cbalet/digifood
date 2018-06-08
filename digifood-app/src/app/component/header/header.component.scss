@@ -1,15 +1,17 @@
-.headerBtn{
+.headerLogo{
+  height: 100px;
+  @media screen and (max-width: 750px) {
+    height: 70px;
+  }
+}
+
+.headerTitle{
   font-weight: bold;
   color: #bf1531;
-   background: none;
-  cursor: pointer;
-  border: none;
   margin: 0 10px;
   padding: 5px 20px;
  }
-.headerBtn:hover{
-  color: #961526;
-}
+
 .cartDiv{
   cursor: pointer;
   .cart{

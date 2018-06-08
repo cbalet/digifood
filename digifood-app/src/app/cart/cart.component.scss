@@ -1,0 +1,58 @@
+.modal-title{
+  font-size: 20px;
+}
+.modal-body{
+  .ngx-datatable.fixed-header .datatable-header .datatable-header-inner .datatable-header-cell{
+    color: #bf1531;
+    font-weight: bold;
+  }
+  .stockInput{
+    width: 30%;
+    text-align: center;
+  }
+  .chtStockBtn{
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    @media screen and (max-width: 600px) {
+      font-size: 15px;
+    }
+  }
+  .centerCell{
+    text-align: center;
+  }
+  .trashCell{
+    cursor: pointer;
+    text-align: center;
+    color: #bf1531;
+  }
+  h2{
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .validateDiv{
+    text-align: center;
+    .validateBtn{
+      color: #bf1531;
+      border: 1px solid #bf1531;
+      padding: 2px 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+}
+
+
+//Modal general
+.modal-open .modal {
+  display: flex !important;
+  align-items: center !important;
+  .modal-dialog {
+    flex-grow: 1;
+    max-width: 600px;
+  }
+}
+

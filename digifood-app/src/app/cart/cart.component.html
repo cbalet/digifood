@@ -1,10 +1,13 @@
 <div role="dialog" aria-labelledby="Panier">
+
   <div class="modal-header">
     <h1 id="eventModalTitle" class="modal-title">Votre commande </h1>
     <button type="button" class="close" aria-label="Close" (click)="activeModal.close(null)">
       <span aria-hidden="true">&times;</span>
     </button>
   </div><br>
+
+
   <div class="modal-body">
     <div *ngIf="rows.length!=0">
       <ngx-datatable
@@ -13,32 +16,37 @@
         [rows]="rows"
         [columnMode]="'force'"
         [messages]="{emptyMessage: 'Aucun produit dans le panier.', selectedMessage:'Sélection(s)', totalMessage:'Total'}">
-        <ngx-datatable-column prop="name" name="Produit"></ngx-datatable-column>
-        <ngx-datatable-column prop="price" name="Prix"></ngx-datatable-column>
-        <ngx-datatable-column cellClass="centerCell" name="Quantité" prop="stock">
+        <ngx-datatable-column [minWidth]="innerWidth > 610? 200:120" prop="name" name="Produit"></ngx-datatable-column>
+        <ngx-datatable-column  prop="price" name="Prix">
           <ng-template #modifyBtn let-row="row"  ngx-datatable-cell-template>
-            <i class="fa fa-minus-square chtStockBtn" (click)="lessStock(row)"></i>
-            <input type="text" class="stockInput" [value]="row.cartStock" disabled>
-            <i class="fa fa-plus-square chtStockBtn" (click)="moreStock(row)"></i>
+            <span>{{row.price}} €</span>
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column cellClass="centerCell" name="Montant">
+        <ngx-datatable-column name="Quantité" prop="stock">
+          <ng-template #modifyBtn let-row="row"  ngx-datatable-cell-template>
+            <i class="fa fa-minus-square chtStockBtn" (click)="lessStock(row)" title="Retirer"></i>
+            <input type="text" class="stockInput" [value]="row.cartStock" disabled>
+            <i class="fa fa-plus-square chtStockBtn" (click)="moreStock(row)" title="Ajouter"></i>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column  cellClass="centerCell" name="Montant">
           <ng-template #modifyBtn let-row="row"  ngx-datatable-cell-template>
             <span>{{row.price * row.cartStock }} €</span>
           </ng-template>
         </ngx-datatable-column>
         <ngx-datatable-column [maxWidth]="15" cellClass="trashCell" name="">
           <ng-template #modifyBtn let-row="row" ngx-datatable-cell-template>
-            <i class="fa fa-trash" (click)="removeProd(row)"></i>
+            <i class="fa fa-trash" (click)="removeProd(row)" title="Retirer le produit"></i>
           </ng-template>
         </ngx-datatable-column>
       </ngx-datatable>
-    </div>
-<br>
+    </div><br>
+
     <span>Nombre de produits : {{totStock}}</span>
     <h2>Montant total: {{totPrice}} €</h2>
     <div class="validateDiv">
       <button class="validateBtn" value="Valider" (click)="validate()">Valider</button>
     </div>
   </div>
+
 </div>

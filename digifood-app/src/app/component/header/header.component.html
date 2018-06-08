@@ -1,11 +1,11 @@
-<header class="row align-items-center" style="margin:0">
-  <div class="col-6">
-    <img src="../../../assets/images/digifood_logo.png" alt="logo digifood" height="100px"/>
+<header class="row align-items-center">
+  <div class="col-5 col-sm-3 col-lg-2">
+    <img src="../../../assets/images/digifood_logo.png" alt="Logo digifood" class="headerLogo"/>
   </div>
-  <div class="col-4">
-    <button class="headerBtn" [routerLink]="['/cart']">Le menu</button>
+  <div class="col-4 col-sm-7 col-lg-9">
+    <span class="headerTitle">Menu</span>
   </div>
-  <div class="col-2 cartDiv" (click)="openCart()">
+  <div class="col-3 col-sm-2 col-lg-1 cartDiv" (click)="openCart()">
     <span class="nbProd">{{totProd}}</span>
     <i class="fa fa-shopping-cart cart"></i>
   </div>

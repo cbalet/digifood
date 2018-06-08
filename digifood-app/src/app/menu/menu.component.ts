@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
   menu: Menu = new Menu();
   cart: Map<string,Product> = new Map<string, Product>();
   products: Product[];
-  private totProd: number =0;
+  totProduct: number =0;
 
   constructor(private cartService : CartService,
               private modalService: NgbModal,
@@ -30,15 +30,22 @@ export class MenuComponent implements OnInit {
     this.cartService.getCart().subscribe(value => {
       this.menu = value;
       this.products = this.menu.categories[0].products;
-      // this.products.forEach(value1 => value1.image.replace(' ','%20'))
     });
   }
 
+  /**
+   * change product list
+   * @param category
+   */
   changeCategory(category) {
     this.products = this.findTheCategory(category).products;
-    // this.products.forEach(value1 => value1.image.replace(' ','%20'))
   }
 
+  /**
+   * find category by name
+   * @param category
+   * @returns {Category}
+   */
   findTheCategory(category):Category{
     let theCat = new Category();
     this.menu.categories.forEach(cat => {
@@ -47,6 +54,10 @@ export class MenuComponent implements OnInit {
     return theCat;
   }
 
+  /**
+   * Add a product to cart
+   * @param product product to add
+   */
   addCart(product) {
     this.toastrService.error('<b>'+product.name+'</b> ajouté à votre panier',"",{enableHtml:true});
     if (this.cart.get(product.name)){
@@ -58,13 +69,21 @@ export class MenuComponent implements OnInit {
     this.calcTotProd();
   }
 
+  /**
+   * Give total number of product
+   */
   calcTotProd(){
-    this.totProd = 0;
+    this.totProduct = 0;
     Array.from(this.cart.values()).forEach(value => {
-      this.totProd += value.cartStock;
+      this.totProduct += value.cartStock;
     })
   }
 
+  /**
+   * add double chevron around the url and pass security
+   * @param {string} image
+   * @returns {SafeStyle}
+   */
   cleanUrl(image: string) {
     return this.sanitizer.bypassSecurityTrustStyle("url(\""+image+"\")");
   }

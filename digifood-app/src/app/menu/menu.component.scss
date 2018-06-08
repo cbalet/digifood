@@ -1,5 +1,4 @@
-//header
-
+//Header
 #header {
   position: fixed;
   z-index: 90;
@@ -10,7 +9,7 @@
   width: 100%;
 }
 
-//navigation
+//Navigation
 .navBloc{
   padding: 20px 15%;
   .catDiv{
@@ -73,10 +72,11 @@
     .prodDetail{
       width: 250px;
       margin: 0 auto;
+      align-items: baseline;
     }
     .name{
       text-align: left;
-
+      padding-top: 5px;
     }
     .price{
       padding: 5px 0;
@@ -96,3 +96,4 @@
     background-image: none !important;
   }
 }
+
