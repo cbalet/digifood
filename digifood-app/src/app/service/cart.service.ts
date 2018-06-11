@@ -15,4 +15,8 @@ export class CartService {
   public getCart(): Observable<any> {
     return this.http.get("./assets/cart.json");
   }
+
+  helloWorld() {
+    return 'Hello world!';
+  }
 }
